@@ -1,0 +1,47 @@
+.sideContainer {
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+}
+
+
+.sidemenu {
+    transition: width 0.3s;
+    overflow: hidden;
+    position: absolute;
+    background-color: rgb(30, 30, 138);
+}
+
+.sidemenu.collapsed {
+    width: 6%;
+    height: 100%;
+}
+
+.sidemenu.expanded {
+    width: 20%;
+    height: 100%;
+}
+
+.sidemenu h3 {
+    color: white;
+}
+
+.sidemenu ul {
+    padding: 8px;
+    background-color: rgb(199, 199, 199);
+}
+
+.sidemenu li {
+    display: flex;
+    background-color: aliceblue;
+    width: 92%;
+}
+
+.sidemenu .item {
+    align-items: center;
+    width: 100%;
+}
+
+.sidemenu button {
+    margin-left: 40%;
+}

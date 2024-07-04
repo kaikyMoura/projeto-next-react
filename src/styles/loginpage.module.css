@@ -1,0 +1,31 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer {
+    background-color: rgb(196, 196, 196);
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formContainer h2 {
+    text-align: center;
+}
+
+/* .buton {
+
+} */
+
+.buton button {
+    padding: 2px;
+}
+
+div .input p {
+    color: rgb(0, 0, 0);
+}

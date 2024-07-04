@@ -1,0 +1,23 @@
+.dashboard {
+    display: flex;
+    margin: 0%;
+    height: 100vh;
+}
+
+.toggleButton {
+    position: absolute;
+    background: none;
+    border: none;
+    margin-left: 1.5em;
+    cursor: pointer;
+    font-size: 18px;
+    left: calc(60px + 10px);
+    transition:  0.4s;
+    z-index: 1000;
+    overflow: hidden;
+}
+.toggleButton.expanded {
+    transition: 0.4s;
+    color: aliceblue;
+    margin-left: 9em;
+}

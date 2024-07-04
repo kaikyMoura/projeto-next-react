@@ -1,0 +1,46 @@
+.navbar {
+    z-index: 1000;
+    background-color: rgb(30, 30, 138);
+    width: 78.7%;
+    height: 4em;
+    margin-left: 22%;
+    transition: 0.3s;
+    position: fixed;
+    justify-content: end;
+}
+
+.navbar.expanded {
+    transition: 0.3s;
+    width: 100%;
+    margin-left: 12%;
+}
+
+.retangle {
+    width: 17px;
+    height: 2px;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: #4FFF4B;
+
+}
+
+.navbar h2 {
+    color: white;
+}
+
+.navItems {
+    position: relative;
+    width: 40%;
+    padding: 10px;
+    height: 100%;
+    align-items: center;
+}
+
+.navbar li {
+    color: white;
+}
+
+.searchInput {
+}

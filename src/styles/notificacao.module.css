@@ -1,0 +1,19 @@
+.modal {
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    margin-top: -50em;
+    height: 20em;
+    width: 50em;
+}
+
+
+
+.modalBlur {
+    box-shadow: inset;
+    background-color: rgba(182, 182, 182, 0.5);
+    /* Cor de fundo com transparência */
+    backdrop-filter: blur(5px);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
