@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import '../styles/globals.css';
 import LoginPage from "./loginPage";
 import ComponenteTela from "./tela"
+import CreateUserPage from "./createUserPage";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter()
@@ -11,6 +12,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   const token = typeof window !== 'undefined' ? sessionStorage.getItem('Token') : null;
 
   useEffect(() => {
+    console.log(token)
     const renderizar = async () => {
       if (!token && router.pathname !== '/loginPage') {
         return <LoginPage />
@@ -19,6 +21,9 @@ const App = ({ Component, pageProps }: AppProps) => {
     renderizar()
   }, [token, router]);
 
+  if (router.pathname === '/createUserPage') {
+    return <CreateUserPage />
+  }
 
   return (
     <ComponenteTela>

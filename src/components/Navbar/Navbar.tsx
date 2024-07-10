@@ -2,13 +2,14 @@ import Link from "next/link"
 import styles from './navbar.module.css'
 import { useRouter } from "next/router"
 import SearchInput from "@/utils/searchInput"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons"
 
 interface NavBarProps {
     //link: string
     navegacao: { nome: string, link: string }[]
     ativarSideMenu?: Boolean
     titulo: string
-    logo?: string
 }
 
 const NavBar = ({ titulo, navegacao, ativarSideMenu }: NavBarProps) => {
@@ -35,8 +36,13 @@ const NavBar = ({ titulo, navegacao, ativarSideMenu }: NavBarProps) => {
                     ))}
 
                 </ul>
-                <div className={`flex justify-center ${styles.searchInput}`}>
+                <div className="">
                     <SearchInput />
+                </div>
+                <div className="relative justify-end ml-[90%]">
+                    <button>
+                        <FontAwesomeIcon className="text-2xl" icon={faCartShopping} color="white" />
+                    </button>
                 </div>
             </div>
         </div >

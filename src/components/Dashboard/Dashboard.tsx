@@ -3,7 +3,8 @@ import SideMenu from "../Menu/SideMenu"
 import NavBar from "../Navbar/Navbar"
 import styles from './Dashboard.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faChartLine } from "@fortawesome/free-solid-svg-icons/faChartLine";
 
 interface DashBoardProps {
     children: React.ReactNode;
@@ -24,13 +25,13 @@ const DashBoard: React.FC<DashBoardProps> = ({ children }) => {
                 ]} titulo={"Dashboard"} />
 
                 <div className="">
-                    <button className={`mt-2 ${styles.toggleButton} ${!ativarSideMenu ? styles.expanded : null}`} onClick={toggleSidebar}><FontAwesomeIcon icon={faBars} /></button>
+                    <button className={`mt-5 ${styles.toggleButton} ${!ativarSideMenu ? styles.expanded : null}`} onClick={toggleSidebar}><FontAwesomeIcon icon={faBars} /></button>
                 </div>
 
                 <SideMenu items={[
-                    { nome: "Dashboard", link: "/dashboard", icone: {} }, { nome: "Produtos", link: "/produtos", icone: {} },
-                    { nome: "Venda", link: "/produtos", icone: {} }, { nome: "Produtos", link: "/produtos", icone: {} }
-                ]} logo={"Dashboard"} ativarSideMenu={ativarSideMenu} />
+                    { nome: "Dashboard", link: "/dashboard", icone: faChartLine }, { nome: "Produtos", link: "/produtos", icone: faCartShopping },
+                    { nome: "Venda", link: "/produtos", icone: faChartLine }, { nome: "Produtos", link: "/produtos", icone: faChartLine }
+                ]} ativarSideMenu={ativarSideMenu} />
             </div>
             <main>
                 {children}

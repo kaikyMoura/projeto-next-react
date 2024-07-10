@@ -2,16 +2,12 @@ import styles from "./Button.module.css"
 
 interface ButtonProps {
     type?: 'primary' | 'secondary';
-    size?: 'md' | 'lg';
+    size?: number | 15;
     text: string;
     action?: Function | any
 }
 
 const Button = ({ text, size, action }: ButtonProps) => {
-    let buttonSize = 10
-    if (size == "lg") {
-        buttonSize = 20
-    }
     const handleClick = (event: { preventDefault: () => void; }) => {
         event.preventDefault()
         if (action) {
@@ -21,7 +17,7 @@ const Button = ({ text, size, action }: ButtonProps) => {
 
     return (
         <>
-            <button className={`${styles.button}`} style={{ width: buttonSize }} onClick={handleClick}>
+            <button className={styles.button} style={{ fontSize: size }} onClick={handleClick}>
                 <p>{text}</p>
             </button>
         </>

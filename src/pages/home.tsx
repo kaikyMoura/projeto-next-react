@@ -1,8 +1,12 @@
+import styles from '../styles/homePage.module.css'
+
 const Home = () => {
 
     return (
         <>
-            dsdsds
+            <div className={styles.container}>
+                dsdsds
+            </div>
         </>
     )
 }
