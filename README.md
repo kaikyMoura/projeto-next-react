@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Nota: Este projeto ainda está em desenvolvimento, então está em um estágio inicial e possui apenas algumas funcionalidades implementadas até agora.
 
-## Getting Started
+# PROJETO AUTENTICAÇÃO COM REACT E TYPESCRIPT #
 
-First, run the development server:
+
+## -- INTRODUÇÃO
+Este projeto é o Front end do projeto [autenticação com spring security](https://github.com/kaikyMoura/autenticacao---spring-Security), onde é tratada a camada visual do projeto.
+
+
+## Instalação e Execução do Projeto
+
+Pré-requisitos
+
+Certifique-se de ter o Node.js instalado em sua máquina. Além disso, um gerenciador de pacotes como npm, yarn, pnpm ou bun é necessário para instalar as dependências do projeto.O primeiro comando a ser executado é o npm install para baixar os pacotes do projeto.
+
+
+## Clonar o Repositório
+
+Primeiro, clone o repositório para sua máquina local. Abra seu terminal e execute o comando abaixo:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/kaikyMoura/projeto-next-react.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Depois, navegue até o diretório do projeto.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Instalar Dependências
 
-## Learn More
+Instale todas as dependências necessárias para o projeto. Dependendo do gerenciador de pacotes que você prefere, execute um dos comandos abaixo:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+npm install
+#ou
+yarn install
+# ou
+pnpm install
+# ou
+bun install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Executar o Projeto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Com as dependências instaladas, você pode iniciar o servidor de desenvolvimento com:
+```bash
+
+npm run dev
+# ou
+yarn dev
+# ou
+pnpm dev
+# ou
+bun dev
+
+```
+
+
+Em seguida abra o seguinte endereço [http://localhost:3000](http://localhost:3000) no seu navegador, para ver a aplicação sendo executada.
+
+
+## Documentação
+Este projeto utiliza [Next.js](https://nextjs.org/), um framework React que facilita a renderização do lado do servidor e a criação de sites estáticos.
+
+Além do [TypeScript](https://www.typescriptlang.org/) como linguagem de desenvolvimento.
+
+
+## PRÉ-VISUALIZAÇÃO
+
+[![Visualizar vídeo](https://github.com/user-attachments/assets/2f20a7f3-9e77-42b7-95ea-0794ad1c3ddb)](https://reccloud.com/pt/u/u1fbqvz)
