@@ -1,6 +1,7 @@
-export default interface IUserLogin {
+interface IUserLogin {
     name?: string,
     lastName?: string,
+    image?: string | null,
     email: string,
     password: string
 }

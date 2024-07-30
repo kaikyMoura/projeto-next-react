@@ -1,0 +1,25 @@
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.productCard {
+    position: relative;
+    align-items: center;
+    height: 100%;
+    width: 50em;
+    border: 1px solid #b1b1b1;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 15px;
+    gap:20em;
+}
+.productCard img {
+    margin-left: 35%;
+    margin-bottom: 1.5em;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+  }

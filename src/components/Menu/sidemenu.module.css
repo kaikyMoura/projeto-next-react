@@ -1,15 +1,15 @@
 .sideContainer {
     overflow: hidden;
     position: relative;
-    height: 100vh;
 }
 
 
 .sidemenu {
     transition: width 0.3s;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     background-color: rgb(30, 30, 138);
+    z-index: 1000;
 }
 
 .sidemenu.collapsed {
@@ -52,7 +52,11 @@
 }
 
 .sidemenu button {
-    margin-left: 40%;
+    margin-left: 4%;
+    background-color: rgb(255, 255, 255);
+    padding: 8px;
+    border-radius: 6px;
+    width: 85%;
 }
 
 .profile {
@@ -71,7 +75,7 @@
 }
 
 .profile.collapsed {
-    background-color: rgb(175, 175, 175);
+    /* background-color: rgb(175, 175, 175); */
     margin-left: 1.25em;
     width: 75%;
     transition: 0.4s;

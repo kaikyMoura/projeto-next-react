@@ -4,7 +4,7 @@ const Loading = () => {
     return (
         <div className={`${styles.modal}`}>
             <div className={`${styles.loader}`}>
-                <span>Aguarde...</span>
+                <span></span>
             </div>
         </div>
     )

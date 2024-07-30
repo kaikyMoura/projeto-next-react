@@ -4,8 +4,15 @@
     height: 100vh;
 }
 
+.container {
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  margin-left: 10%;
+  margin-top: 1.5em;
+}
+
 .toggleButton {
-    position: absolute;
+    position: fixed;
     background: none;
     border: none;
     margin-left: 1.5em;
@@ -13,7 +20,7 @@
     font-size: 18px;
     left: calc(60px + 10px);
     transition:  0.4s;
-    z-index: 1000;
+    z-index: 2000;
     overflow: hidden;
 }
 .toggleButton.expanded {

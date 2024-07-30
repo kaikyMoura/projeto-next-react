@@ -6,12 +6,13 @@ import { createUser } from "../api/services/serviceUser"
 import { useRouter } from "next/router"
 import Link from "next/link"
 import styles from "../styles/loginpage.module.css"
-import UserLoginProps from "@/model/IUser"
+import Loading from "@/utils/loading"
 
 
 const CreateUserPage = () => {
 
-    const [alerta, setAlerta] = useState(Boolean)
+    const [alerta, setAlerta] = useState(false)
+    const [carregando, setCarregando] = useState(false)
 
     const [nome, setNome] = useState("")
     const [sobreNome, setSobreNome] = useState("")
@@ -30,18 +31,22 @@ const CreateUserPage = () => {
             console.error("Erro")
         }
 
-        const usuario:UserLoginProps = {
+        const usuario:IUserLogin = {
             name: nome,
             lastName: sobreNome,
+            image: null,
             email: email,
             password: password
         }
 
         console.log(usuario)
+        setCarregando(true)
         await createUser(usuario).then(() => {
             setAlerta(true)
+            setCarregando(false)
             router.push('/loginPage')
         }).catch((erro) => {
+            setCarregando(false)
             console.error("Erro: ", erro)
         })
     }
@@ -90,7 +95,8 @@ const CreateUserPage = () => {
                 </form>
             </div>
 
-            {alerta ? <Alert type={"sucess"} titulo={"Usuário cadastrado com sucesso!"} Close={Closer} /> : null}
+            {alerta ? <Alert type={"sucess"} title={"Sucesso!"} Close={Closer} text={"Usuário cadastrado com sucesso!"} /> : null}
+            {carregando ? <Loading /> : null}
         </>
     )
 }

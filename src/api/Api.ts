@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'http://localhost:8089',
+     baseURL: 'https://autenticacao-spring-security-production.up.railway.app',
+    //baseURL: 'http://localhost:8089',
 })
 
 api.interceptors.request.use(config => {

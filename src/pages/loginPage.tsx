@@ -2,14 +2,15 @@ import { SetStateAction, useState } from "react";
 import { userLogin } from "../api/services/serviceUser";
 import Button from "../components/Button/Button";
 import Input from "../components/Input/Input";
-import IUserLogin from "../model/IUserLogin";
 import styles from "../styles/loginpage.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Loading from '../utils/loading'
+import Alert from "@/utils/notificacao";
 
 const LoginPage = () => {
 
+    const [alerta, setAlerta] = useState(false)
     const [carregando, setCarregando] = useState(false)
 
     const router = useRouter()
@@ -24,12 +25,18 @@ const LoginPage = () => {
         }
         sessionStorage.setItem('UserEmail', email)
         setCarregando(true)
+
         await userLogin(usuario).then(() => {
+            setAlerta(true)
             setCarregando(false)
             router.push("/home")
-        }).catch((e) => {
-            console.log(e)
+        }).catch((erro) => {
+            setCarregando(false)
+            console.error("Erro: ", erro)
         })
+    }
+    const Closer = () => {
+        setAlerta(false)
     }
 
     return (
@@ -53,6 +60,7 @@ const LoginPage = () => {
                 </form>
             </div>
             {carregando ? <Loading /> : null}
+            {alerta ? <Alert type={"sucess"} title={"Sucesso!"} Close={Closer} text={"Usuário cadastrado com sucesso!"} /> : null}
         </>
     )
 }

@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styles from './sidemenu.module.css'
-import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
@@ -57,14 +56,14 @@ const SideMenu = ({ items, ativarSideMenu }: SideMenuProps) => {
                                 </li>
                             </>
                         ))}
-                        <li className={`relative top-60`}>
-                            <div className={`flex justify-between ${styles.item}`}>
+                        <button className={`absolute bottom-2`}>
+                            <div className={`flex justify-between  ${styles.item}`}>
                                 {!ativarSideMenu ? <button onClick={Logout}><p className='text-md font-medium'>Sair</p></button> : null}
                                 <i className={`${styles.listIcon} ${ativarSideMenu ? styles.collapsed : styles.expanded}`}>
                                     <FontAwesomeIcon className='ml-1' icon={faRightFromBracket} />
                                 </i>
                             </div>
-                        </li>
+                        </button>
                     </ul>
 
                 </div>

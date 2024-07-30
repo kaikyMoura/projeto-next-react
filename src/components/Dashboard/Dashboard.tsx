@@ -33,9 +33,14 @@ const DashBoard: React.FC<DashBoardProps> = ({ children }) => {
                     { nome: "Venda", link: "/produtos", icone: faChartLine }, { nome: "Produtos", link: "/produtos", icone: faChartLine }
                 ]} ativarSideMenu={ativarSideMenu} />
             </div>
+            
+            <div className={styles.container}>
+
             <main>
                 {children}
             </main>
+            
+            </div>
         </>
     )
 }
