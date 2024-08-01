@@ -2,29 +2,26 @@
     display: flex;
     margin: 0%;
     height: 100vh;
+    top: 0;
 }
 
 .container {
-  padding: 40px;
-  font-family: Arial, sans-serif;
-  margin-left: 10%;
-  margin-top: 1.5em;
+    position: absolute;
+    padding: 60px;
+    font-family: Arial, sans-serif;
+    margin-top: 2em;
 }
 
 .toggleButton {
+    margin-top: 1.38em;
     position: fixed;
+    margin-left: 12em;
     background: none;
     border: none;
-    margin-left: 1.5em;
     cursor: pointer;
     font-size: 18px;
     left: calc(60px + 10px);
-    transition:  0.4s;
-    z-index: 2000;
-    overflow: hidden;
-}
-.toggleButton.expanded {
     transition: 0.4s;
-    color: aliceblue;
-    margin-left: 9em;
+    z-index: 3000;
+    overflow: hidden;
 }
