@@ -3,6 +3,8 @@ import { getSingleProduct } from "@/api/services/servicestore";
 import styles from "../../styles/products.module.css"
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import Loading from "@/utils/loading";
 
 const ProductDetails = () => {
     const router = useRouter()
@@ -38,7 +40,11 @@ const ProductDetails = () => {
         <>
             <div className={styles.container}>
                 <div className={styles.productCard}>
-                    <img src={product?.image} alt={product?.title} width={200} height={200} />
+                    {product && product.image ? (
+                        <Image src={product.image} alt={product.title} width={200} height={200} />
+                    ) : (
+                        <Loading />
+                    )}
                     <div className={styles.productInfo}>
                         <h1>{product?.title}</h1>
                         <p>{product?.description}</p>

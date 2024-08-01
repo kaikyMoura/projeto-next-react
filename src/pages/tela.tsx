@@ -2,12 +2,6 @@ import DashBoard from "../components/Dashboard/Dashboard";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import LoginPage from "./loginPage";
-import IUser from "@/model/IUser";
-
-// interface ComponenteTelaProps {
-//     usuario: IUser
-// }
-
 
 const ComponenteTela: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const router = useRouter();

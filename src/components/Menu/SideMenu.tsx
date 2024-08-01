@@ -4,7 +4,6 @@ import styles from './sidemenu.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
-import IUser from '@/model/IUser'
 import { useEffect, useState } from 'react'
 import { getUser } from '@/api/services/serviceUser'
 
@@ -35,7 +34,7 @@ const SideMenu = ({ items, ativarSideMenu }: SideMenuProps) => {
     return (
         <>
             <div className={styles.sideContainer}>
-                <div className={`${styles.sidemenu} ${!ativarSideMenu ? styles.expanded : styles.collapsed}`}>
+                <div className={`${styles.sidemenu}`}>
                     <div className={`flex ${styles.profile} ${ativarSideMenu ? styles.expanded : styles.collapsed}`}>
                         <FontAwesomeIcon className={`${styles.profileIcon}`} icon={faCircleUser} />
                         {/* <Image width={2} height={2} src={'/'} alt='Usuário'/> */}

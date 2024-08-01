@@ -1,5 +1,3 @@
-import IUser from "@/model/IUser";
-import IUserLogin from "../../model/IUserLogin";
 import api from "../Api";
 
 export const userLogin = async (usuario: IUserLogin) => {

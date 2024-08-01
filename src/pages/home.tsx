@@ -2,6 +2,7 @@ import { getAllProducts, getCategories } from '@/api/services/servicestore';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styles from '../styles/homePage.module.css';
+import Image from 'next/image';
 
 const Home = () => {
 
@@ -44,7 +45,7 @@ const Home = () => {
                             <>
                                 <div key={product.id} className={styles.productCard}>
                                     <Link href={`/product/${product.id}`}>
-                                        <img className={`${styles.image}`} src={product.image} alt={product.title} />
+                                        <Image className={`${styles.image}`} src={product.image} alt={product.title} width={200} height={200}/>
                                         <h3>{product.title}</h3>
                                         <span>R$ {product.price.toFixed(2)}</span>
                                     </Link>
