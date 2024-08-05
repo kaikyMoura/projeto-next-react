@@ -69,4 +69,9 @@ Além do [TypeScript](https://www.typescriptlang.org/) como linguagem de desenvo
 
 ## PRÉ-VISUALIZAÇÃO
 
-[![Visualizar vídeo](https://github.com/user-attachments/assets/2f20a7f3-9e77-42b7-95ea-0794ad1c3ddb)](https://reccloud.com/pt/u/u1fbqvz)
+[Clique para visualizar a aplicação](https://projeto-next-react-front-end-service.up.railway.app/)
+
+
+## PS: Este projeto é para estudos e ainda está sendo desenvolvido.
+
+[![Visualizar vídeo](https://github.com/user-attachments/assets/2f20a7f3-9e77-42b7-95ea-0794ad1c3ddb)](https://reccloud.com/pt/u/y27d7oc)
