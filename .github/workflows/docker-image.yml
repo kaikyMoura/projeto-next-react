@@ -28,6 +28,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-build-
 
+      - name: Build Docker image
+        run: |
+          docker build -t prjecmm-image .
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
