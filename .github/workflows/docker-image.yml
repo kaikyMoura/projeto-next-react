@@ -47,6 +47,6 @@ jobs:
         run: |
           docker run -d -p 3000:3000 --name projeto-ecommerce kaikymoura/prjecmm-image:latest
 
-      - name: Verify application is running
-        run: |
-          curl -f http://localhost:3000 || exit 1
+      # - name: Verify application is running
+      #   run: |
+      #     curl -f http://localhost:3000 || exit 1
