@@ -1,4 +1,4 @@
-import { getAllProducts, getCategories } from '@/api/services/servicestore';
+import { getAllProducts, getCategories, getCategory, getProductsWithLimit } from '@/api/services/productService';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styles from '../styles/homePage.module.css';
@@ -7,6 +7,7 @@ import Image from 'next/image';
 const Home = () => {
 
     const [products, setProducts] = useState<Product[]>()
+    const [productsCategory, setProductsCategory] = useState<Product[]>()
     const [categories, setCategories] = useState<[]>()
     //const router = useRouter()
 
@@ -14,9 +15,10 @@ const Home = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await getAllProducts()
+                const res = await getProductsWithLimit(4)
                 setProducts(res);
                 setCategories(await getCategories())
+                setProductsCategory(await getCategory('electronics'))
                 // console.log(await getCategory("electronics"))
             } catch (error) {
                 console.error("Erro ao buscar produtos:", error);
@@ -41,11 +43,28 @@ const Home = () => {
                 <section className={styles.featuredProducts}>
                     <h2>Produtos em Destaque</h2>
                     <div className={styles.productGrid}>
-                        {products?.slice(0, 4).map(product => (
+                        {products?.map(product => (
                             <>
                                 <div key={product.id} className={styles.productCard}>
                                     <Link href={`/product/${product.id}`}>
-                                        <Image className={`${styles.image}`} src={product.image} alt={product.title} width={200} height={200}/>
+                                        <Image className={`${styles.image}`} src={product.image} alt={product.title} width={200} height={200} />
+                                        <h3>{product.title}</h3>
+                                        <span>R$ {product.price.toFixed(2)}</span>
+                                    </Link>
+                                </div>
+                            </>
+                        ))}
+                    </div>
+                </section>
+
+                <section className={styles.featuredProducts}>
+                    <h2>Destaques em tecnologia</h2>
+                    <div className={styles.productGrid}>
+                        {productsCategory?.slice(0, 5).map(product => (
+                            <>
+                                <div key={product.id} className={styles.productCard}>
+                                    <Link href={`/product/${product.id}`}>
+                                        <Image className={`${styles.image}`} src={product.image} alt={product.title} width={200} height={200} />
                                         <h3>{product.title}</h3>
                                         <span>R$ {product.price.toFixed(2)}</span>
                                     </Link>

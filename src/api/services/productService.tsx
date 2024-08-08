@@ -9,6 +9,16 @@ export const getAllProducts = async () => {
     }
 };
 
+export const getProductsWithLimit = async (limit: number) => {
+    try {
+        const res = await axios.get(`https://fakestoreapi.com/products?limit=${limit}`);
+        return res.data;
+    } catch (error) {
+        console.error("Erro ao buscar produtos:", error);
+    }
+};
+
+
 export const getSingleProduct = async (numero: any) => {
     try {
         const res = await axios.get(`https://fakestoreapi.com/products/${numero}`)

@@ -9,9 +9,10 @@ interface AlertProps {
     title: string,
     image?: string
     text: string
+    action?: () => void 
 }
 
-const Alert = ({ Close, title, type, text }: AlertProps) => {
+const Alert = ({ Close, title, type, text, action }: AlertProps) => {
     
     let color
     switch (type) {
@@ -37,6 +38,8 @@ const Alert = ({ Close, title, type, text }: AlertProps) => {
                     <h2 className="text-lg" style={{color: color}}>{title}</h2>
 
                     <p className="">{text}</p>
+                
+                    <button onClick={action}/>
                 </div>
             </div>
         </>

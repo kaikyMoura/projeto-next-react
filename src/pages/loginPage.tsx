@@ -10,7 +10,7 @@ import Alert from "@/utils/notificacao";
 
 const LoginPage = () => {
 
-    //const [alerta, setAlerta] = useState(false)
+    const [alerta, setAlerta] = useState(false)
     const [carregando, setCarregando] = useState(false)
 
     const router = useRouter()
@@ -32,12 +32,13 @@ const LoginPage = () => {
             router.push("/home")
         }).catch((erro) => {
             setCarregando(false)
+            setAlerta(true)
             console.error("Erro: ", erro)
         })
     }
-    // const Closer = () => {
-    //     setAlerta(false)
-    // }
+    const Closer = () => {
+        setAlerta(false)
+    }
 
     return (
         <>
@@ -60,7 +61,7 @@ const LoginPage = () => {
                 </form>
             </div>
             {carregando ? <Loading /> : null}
-            {/* {alerta ? <Alert type={"sucess"} title={"Sucesso!"} Close={Closer} text={"Usuário cadastrado com sucesso!"} /> : null} */}
+            {alerta ? <Alert type={"error"} title={"Erro!"} Close={Closer} text={"Esse email já esta sendo utlizado!"} /> : null}
         </>
     )
 }

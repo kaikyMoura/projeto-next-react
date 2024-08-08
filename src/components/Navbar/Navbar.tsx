@@ -1,22 +1,24 @@
-import Link from "next/link"
-import styles from './navbar.module.css'
-import { useRouter } from "next/router"
 import SearchInput from "@/utils/searchInput"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faCartShopping } from "@fortawesome/free-solid-svg-icons"
-import { useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Link from "next/link"
+import { useRouter } from "next/router"
+import styles from './navbar.module.css'
 
 interface NavBarProps {
-    //link: string
     navegacao?: { nome: string, link: string }[]
     sidebarActive?: Boolean
-    toggleSideBar: ()=> void,
+    toggleSideBar: () => void,
     titulo: string
 }
 
 const NavBar = ({ titulo, navegacao, sidebarActive, toggleSideBar }: NavBarProps) => {
     const router = useRouter()
 
+    // const buyNow = async (productId: any) => {
+    //     await getUserCart()
+    //     router.push(`/cart/${productId}`)
+    // }
 
     return (<>
         <div className={`${styles.navbar} ${sidebarActive ? styles.expanded : styles.collapsed}`}>
@@ -25,10 +27,11 @@ const NavBar = ({ titulo, navegacao, sidebarActive, toggleSideBar }: NavBarProps
                 <div className="ml-[50%]">
                     <SearchInput />
                 </div>
-                <div className="relative ml-[100%]">
-                    <button className="flex gap-1">
+                <div className="relative ml-[95%]">
+                    <button className="flex gap-1" onClick={() => router.push(`/cart`)}>
                         <FontAwesomeIcon className="text-3xl" icon={faCartShopping} color="white" />
                         <p className="text-white text-medium mt-1">Carrinho</p>
+                        1
                     </button>
                 </div>
             </div>
@@ -36,10 +39,10 @@ const NavBar = ({ titulo, navegacao, sidebarActive, toggleSideBar }: NavBarProps
             <div className={`${styles.navMain}`}>
                 <ul className={`flex space-x-8`}>
                     <li>
-                            <button className={`flex ${styles.toggleButton} ${!toggleSideBar ? styles.expanded : null}`} onClick={toggleSideBar}>
-                                <FontAwesomeIcon icon={faBars} />
-                                <p className="ml-2">Mais</p>
-                            </button>
+                        <button className={`flex ${styles.toggleButton} ${!toggleSideBar ? styles.expanded : null}`} onClick={toggleSideBar}>
+                            <FontAwesomeIcon icon={faBars} />
+                            <p className="ml-2">Mais</p>
+                        </button>
                     </li>
                     {navegacao?.map((item) => (
                         <>
