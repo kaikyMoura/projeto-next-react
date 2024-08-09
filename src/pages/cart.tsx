@@ -77,7 +77,7 @@ const CartDetails = () => {
                                     <h3>{product.title}</h3>
                                     <p>Quantidade: {product.quantity}</p>
                                     <p>Preço unitário: R$ {product.price.toFixed(2)}</p>
-                                    <p>Total: R$ {(product.price * product.quantity).toFixed(2)}</p>
+                                    <p>Total: R$ {(product.price * (product.quantity ?? 0)).toFixed(2)}</p>
                                 </div>
                             </div>
                         ))}
@@ -87,8 +87,7 @@ const CartDetails = () => {
                 )}
 
                 <div className={styles.cartTotal}>
-                    {/* Calcula o total do carrinho */}
-                    <h3>Total do Carrinho: R$ {products.reduce((acc, product) => acc + product.price * product.quantity, 0).toFixed(2)}</h3>
+                    <h3>Total do Carrinho: R$ {products.reduce((acc, product) => acc + product.price * (product.quantity ?? 0), 0).toFixed(2)}</h3>
                     <button className={styles.checkoutButton}>Finalizar Compra</button>
                 </div>
             </section>
