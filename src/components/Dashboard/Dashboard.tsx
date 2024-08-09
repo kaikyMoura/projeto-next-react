@@ -21,7 +21,7 @@ const DashBoard: React.FC<DashBoardProps> = ({ children }) => {
         <>
             <div className={`${styles.dashBoard}`}>
                 <NavBar toggleSideBar={toggleSidebar} navegacao={[
-                    { nome: "Home", link: "/home" }, { nome: "Home", link: "/home" }
+                    { nome: "Home", link: "/home" }
                 ]} titulo={"Dashboard"} />
 
                 {!ativarSideMenu ?

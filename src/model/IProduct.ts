@@ -5,8 +5,9 @@ interface Product {
     description: string,
     category: string,
     image: string,
-    rating: {
+    rating?: {
         rate: number,
         count: number
     }
+    quantity?: number
 }
