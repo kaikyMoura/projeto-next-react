@@ -83,7 +83,7 @@ const CreateUserPage = () => {
 
                     <br />
 
-                    <div className={`relative sm:ml-[0.10em] md:ml-[6.2em] ${styles.buton}`}>
+                    <div className={`flex justify-center ${styles.loginButton}`}>
                         <Button text={"salvar"} action={criarUsuario} />
                     </div>
 

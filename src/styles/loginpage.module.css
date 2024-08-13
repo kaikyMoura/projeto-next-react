@@ -22,9 +22,8 @@
 
 } */
 
-.buton button {
-    padding: 2px;
-    width: 10em;
+.loginButton button {
+    width: 12em;
 }
 
 div .input p {

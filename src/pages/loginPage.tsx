@@ -51,7 +51,7 @@ const LoginPage = () => {
                         setPassword(e.target.value)
                     } type={"password"} />
                     <br />
-                    <div className={`relative sm:ml-[0.10em] md:ml-[6.2em] ${styles.buton}`}>
+                    <div className={`flex justify-center ${styles.loginButton}`}>
                         <Button text={"salvar"} size={16} action={login} />
                     </div>
                     <br />
