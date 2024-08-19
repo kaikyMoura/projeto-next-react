@@ -65,11 +65,3 @@ Em seguida abra o seguinte endereço [http://localhost:3000](http://localhost:30
 Este projeto utiliza [Next.js](https://nextjs.org/), um framework React que facilita a renderização do lado do servidor e a criação de sites estáticos.
 
 Além do [TypeScript](https://www.typescriptlang.org/) como linguagem de desenvolvimento.
-
-
-## PRÉ-VISUALIZAÇÃO
-
-[Clique para visualizar a aplicação](https://projeto-next-react-front-end-service.up.railway.app/)
-
-
-## PS: Este projeto é para estudos e ainda está sendo desenvolvido.
